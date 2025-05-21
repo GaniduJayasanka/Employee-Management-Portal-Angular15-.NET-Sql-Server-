@@ -1,0 +1,63 @@
+<div class="d-flex flex-row bd-highlight mb-3">
+<div class="form-froup row" style="width: 150%; height: 100%;">
+
+    <label class="col-sm-5 col-form-label">First Name</label>
+    <div class="col-sm-10">
+
+        <input type="text" class="form-control" [(ngModel)]="FirstName"
+        placeholder="First Name">
+    </div>
+
+    <label class="col-sm-5 col-form-label">Last Name</label>
+    <div class="col-sm-10">
+        <input type="text" class="form-control" [(ngModel)]="LastName"
+        placeholder="Last Name">
+    </div>
+     
+    <label class="col-sm-5 col-form-label">Gender</label>
+    <div class="col-sm-10" >
+       <select class="form-control" [(ngModel)]="Gender">
+           <option> Male </option>
+           <option> Female </option>
+       </select>
+    </div>
+    
+    <label class="col-sm-5 col-form-label">Date of Birth</label>
+    <div class="col-sm-10">
+        <input type="date"  [(ngModel)]="DateOfBirth">
+    </div>
+     
+    <label class="col-sm-5 col-form-label">Address</label>
+    <div class="col-sm-10">
+        <input type="text" class="form-control" [(ngModel)]="Address"
+        placeholder="Address">
+    </div>
+
+    <label class="col-sm-5 col-form-label">Department</label>
+    <div class="col-sm-10">
+       <select class="form-control" [(ngModel)]="Department">
+
+           <option>--Select--</option>
+           <option *ngFor="let depName of DepartmentsList">
+               {{depName.DepartmentName}}
+           </option>
+       </select>
+    </div>
+
+    <label class="col-sm-5 col-form-label">Basic Salary</label>
+    <div class="col-sm-10">
+        <input type="text" class="form-control" [(ngModel)]="BasicSalary"
+        placeholder="Basic Salary">
+    </div>
+
+</div>
+</div>
+
+
+<button (click)="addEmployee()" *ngIf="emp.EmployeeID==0" class="btn btn-primary">
+    Add
+</button>
+
+<button (click)="updateEmployee()" *ngIf="emp.EmployeeID!=0" class="btn btn-primary">
+    Update
+</button>
